@@ -33,8 +33,8 @@ def makeFile(path):
     r2="""+str(round(df[i],2))+ """, 
     r3="""+str(round(df[i],2))+ """, 
     r4="""+str(round(df[i]+20.0,2))+ """,
-    rk2=""" + const + """,
-    rk3=""" + const + """, 
+    rk2=""" + str(const) + """,
+    rk3=""" + str(const) + """, 
     /
     &end
 
