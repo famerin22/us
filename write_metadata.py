@@ -24,7 +24,7 @@ def makeFile(path):
 
     cte= float(write_rst.const)*2 
 
-    with open ("metadata.dat", "w") as f:
+    with open (root + path + "metadata.dat", "w") as f:
         for i in range (len(df)):    
             f.write(root+path+"wham/"+str(i+1)+".dat "+str(round(df[i],2))+" "+str(round(cte,3))+"\n")
             f.close
