@@ -13,7 +13,7 @@ import pandas as pd
 
 
 def makeFile(path):
-    root = "/home/noosh/fer_recuperado/Compuestos_Nati/SinComp/noRNA/US/"
+    root = "/home/noosh/fer_recuperado/Compuestos_nati/SinComp/noRNA/US/"
     path = root + path
     NGLY141 = 2246
     OE1GLU304 = 4820
