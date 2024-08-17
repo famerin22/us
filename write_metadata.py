@@ -19,7 +19,7 @@ def makeFile(path):
     # print (difference_1)
     # print (difference_2)
 
-    df = pd.read_csv(path+"dists.dat", skiprows=1, delimiter='\s+', names = ["Frame", "dist"])
+    df = pd.read_csv(root + path+"dists.dat", skiprows=1, delimiter='\s+', names = ["Frame", "dist"])
     df = df["dist"]
 
     cte= float(write_rst.const)*2 
