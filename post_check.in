@@ -1,0 +1,21 @@
+parm ../x.prmtop
+# Set N to the total number of frames in the trajectory
+set N = 8
+for i=1;i<=$N;i++
+  # Clear the previous trajectory
+  clear trajin
+  trajin /home/usuario/cecar/us/rna_16A/us2d/us2d_15ventanas/fill_gaps/fill_gaps2/fill_gaps3/fill_gaps_stronger/md$i_gap_stronger.nc
+  j=$i+34
+  distance r11_$j @7068 @7065 out r11_$j.dat
+  distance r12_$j @7065 @7978 out r12_$j.dat
+  distance r21_$j @7978 @7980 out r21_$j.dat
+  distance r22_$j @7980 @1754 out r22_$j.dat
+  run
+  delta1 = r11_$j - r12_$j
+  delta2 = r21_$j - r22_$j
+  writedata rc1_$j.dat delta1
+  writedata rc2_$j.dat delta2
+  run
+
+done
+
