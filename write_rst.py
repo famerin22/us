@@ -12,7 +12,10 @@ import pandas as pd
 
 
 
+const = 500
+
 def makeFile(path):
+    global const
     root = "/home/noosh/fer_recuperado/Compuestos_nati/SinComp/noRNA/US/"
     path = root + path
     NGLY141 = 2246
@@ -30,8 +33,8 @@ def makeFile(path):
     r2="""+str(round(df[i],2))+ """, 
     r3="""+str(round(df[i],2))+ """, 
     r4="""+str(round(df[i]+20.0,2))+ """,
-    rk2=500,
-    rk3=500, 
+    rk2=""" + const + """,
+    rk3=""" + const + """, 
     /
     &end
 
