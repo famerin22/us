@@ -9,11 +9,7 @@ def converter(val):
         else:
             return float(val)
     except ValueError:
-<<<<<<< HEAD
         return 30
-=======
-        return 0
->>>>>>> e2695187e4259dd907c3ff6cb887ed92473ce30a
 
 def makePlot(path):
 
