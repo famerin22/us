@@ -18,6 +18,7 @@ def makePlot(path):
         if os.path.isfile(filename):    
             # Load data from file
             data = np.loadtxt(filename, converters={1: converter})
+            print(data[0:200, :])
             # Ensure the file has at least 2 columns
             if data.shape[1] >= 2:
                 x = data[:, 0]  # First column (if needed)
