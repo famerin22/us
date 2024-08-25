@@ -2,6 +2,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 
+def converter(val):
+    try:
+        return float(val)
+    except ValueError:
+        return 10000
+
 def makePlot(path):
 
     figure, ax = plt.subplots()
@@ -11,7 +17,7 @@ def makePlot(path):
         filename = f"../{path}/us_corrida1/restraint_{str(i+1)}.dat"
         if os.path.isfile(filename):    
             # Load data from file
-            data = np.loadtxt(filename)
+            data = np.loadtxt(filename, converters={0: converter, 1: converter})
             # Ensure the file has at least 2 columns
             if data.shape[1] >= 2:
                 x = data[:, 0]  # First column (if needed)
