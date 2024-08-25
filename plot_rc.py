@@ -6,7 +6,7 @@ def converter(val):
     try:
         return float(val)
     except ValueError:
-        return 10000
+        return 35
 
 def makePlot(path):
 
@@ -26,7 +26,7 @@ def makePlot(path):
 
                 # Plot the second column
                 plt.plot(x, y, alpha=0.7)
-                ax.set_ylim(7, 25)
+                ax.set_ylim(7, 37)
 
     # Labeling
     #    plt.xlabel('First Column')
