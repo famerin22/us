@@ -4,7 +4,7 @@ import os
 
 def converter(val):
     try:
-        return float(val)
+        return int(val)
     except ValueError:
         return 10000
 
