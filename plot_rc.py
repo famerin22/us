@@ -4,9 +4,12 @@ import os
 
 def converter(val):
     try:
-        return float(val)
+        if float(val) > 30:
+            return 30
+        else:
+            return float(val)
     except ValueError:
-        return 35
+        return 30
 
 def makePlot(path):
 
@@ -18,7 +21,6 @@ def makePlot(path):
         if os.path.isfile(filename):    
             # Load data from file
             data = np.loadtxt(filename, converters={1: converter})
-            print(data[0:200, :])
             # Ensure the file has at least 2 columns
             if data.shape[1] >= 2:
                 x = data[:, 0]  # First column (if needed)
@@ -26,7 +28,7 @@ def makePlot(path):
 
                 # Plot the second column
                 plt.plot(x, y, alpha=0.7)
-                ax.set_ylim(7, 37)
+                #ax.set_xlim(100, 230)
 
     # Labeling
     #    plt.xlabel('First Column')
@@ -37,7 +39,7 @@ def makePlot(path):
     # Show plot
     #    plt.tight_layout()  # Adjust layout to make room for the legend
     plt.savefig(f"../{path}/us_corrida1/rc.png")
-    #plt.close()
+    plt.close()
 
 makePlot("ATP")
 makePlot("apo")
