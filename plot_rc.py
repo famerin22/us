@@ -11,7 +11,7 @@ def converter(val):
     except ValueError:
         return 30
 
-def makePlot(path):
+def makePlot(path, ylims):
 
     figure, ax = plt.subplots()
 
@@ -28,7 +28,7 @@ def makePlot(path):
 
                 # Plot the second column
                 plt.plot(x, y, alpha=0.7)
-                #ax.set_xlim(100, 230)
+                ax.set_ylim(ylims[0], ylims[1])
 
     # Labeling
     #    plt.xlabel('First Column')
@@ -41,5 +41,5 @@ def makePlot(path):
     plt.savefig(f"../{path}/us_corrida1/rc.png")
     plt.close()
 
-makePlot("ATP")
-makePlot("apo")
+makePlot("ATP", [7, 14])
+makePlot("apo", [12, 21])

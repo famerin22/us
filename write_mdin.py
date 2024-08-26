@@ -1,12 +1,12 @@
 import numpy as np
 import pandas as pd
-#import matplotlib.pyplot as plt   
+#import matplotlib.pyplot as plt
 
-def makeFile(path):
+def makeFile(path, imgs):
     root = "/home/noosh/fer_recuperado/Compuestos_nati/SinComp/noRNA/US/"
-    for i in range (15):    
-        with open (root + path + "md"+str(i+1)+".in", "w") as f:
-            f.write("MD MM T cte Ventana "+str(i+1)+"""
+    for i in imgs:
+        with open (root + path + "md"+str(i)+".in", "w") as f:
+            f.write("MD MM T cte Ventana "+str(i)+"""
     &cntrl
     imin=0,
     ntx=1,irest=0,
@@ -19,11 +19,13 @@ def makeFile(path):
     /
     &wt type='DUMPFREQ', istep1=1, /
     &wt type='END', /
-    DISANG= restraint_"""+str(i+1)+""".rst
-    DUMPAVE= restraint_"""+str(i+1)+""".dat
+    DISANG= restraint_"""+str(i)+""".rst
+    DUMPAVE= restraint_"""+str(i)+""".dat
     """)
 
         f.close()
+apoimgs = [1, 2, 3, 7, 12, 17, 21, 30, 31, 35, 48]
+ATPimgs = [1, 4, 6, 7, 12, 21, 23, 28, 31, 39, 40, 44]
 
-makeFile("apo/")
-makeFile("ATP/")
+makeFile("apo/", apoimgs)
+makeFile("ATP/", ATPimgs)
